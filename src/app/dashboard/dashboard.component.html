@@ -1,0 +1,133 @@
+<section>
+    <div class="container">
+        <div class="btn">
+            <button type="button" (click)="openModal(template,'user')">Add User</button>
+        </div>
+        <br>
+
+        <div *ngIf="userStatus" class="row">
+            <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
+               <div class="card">
+               <div class="head">
+                <div class="row">
+                    <div class="col-8">
+                        <div class="user">
+                            <h5>{{userData?userData:"user"}}</h5>                            
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <button type="button" (click)="openModal(template,'delete')">X</button>
+                    </div>
+                </div>
+               </div>
+                <h6>{{taskData?taskData:"task"}}</h6>
+                
+                <div class="round">
+                   <a type="button" (click)="openModal(template,'task')"> <i class="fa fa-plus roundPlus" aria-hidden="true"></i></a>
+                </div>
+               </div>
+            </div>
+            <!-- <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
+                <div class="card">
+                <div class="head">
+                 <div class="row">
+                     <div class="col-8">
+                         <div class="user">
+                             <h5>User Name</h5>                            
+                         </div>
+                     </div>
+                     <div class="col-4">
+                         <button type="button" (click)="openModal(template,'delete')">X</button>
+                     </div>
+                 </div>
+                </div>
+                <h6>task 1</h6>
+                <h6>task 2</h6>
+                <h6>task 3</h6>
+                <div class="round">
+                    <a type="button" (click)="openModal(template,'task')"> <i class="fa fa-plus roundPlus" aria-hidden="true"></i></a>
+                 </div>
+                </div>
+             </div> -->
+             <!-- <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
+                <div class="card">
+                <div class="head">
+                 <div class="row">
+                     <div class="col-8">
+                         <div class="user">
+                             <h5>User Name</h5>                            
+                         </div>
+                     </div>
+                     <div class="col-4">
+                         <button type="button" (click)="openModal(template,'delete')">X</button>
+                     </div>
+                 </div>
+                </div>
+                <h6>task 1</h6>
+                <h6>task 2</h6>
+                <h6>task 3</h6>
+                <div class="round">
+                    <a type="button" (click)="openModal(template,'task')"> <i class="fa fa-plus roundPlus" aria-hidden="true"></i></a>
+                 </div>
+                </div>
+             </div> -->
+        </div>
+    </div>
+</section>
+
+<ng-template #template>
+    <div class="" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <button type="button" class="close pull-right d-flex justify-content-end" aria-label="Close" (click)="modalRef.hide()">
+            <img src="../../assets/close.svg" alt="">
+        </button>
+    <div class="modal-header">
+        <div *ngIf="user" class="modal__title">
+            Add User
+        </div>
+        <div *ngIf="task" class="modal__title">
+            Add Task
+        </div>
+        <div *ngIf="delete" class="modal__title">
+            Delete User
+        </div>
+       
+    </div>
+    <div *ngIf="user" class="modal-body">
+        <form [formGroup]="userForm">
+            <input type="text" formControlName="user" placeholder="Enter user name"> 
+            <div *ngIf="submit && userForm['controls'].user.hasError('required')">
+                Please enter user name
+            </div>
+            
+        </form>
+        <div class="add" >
+            <button type="button" (click)="addUser()">ADD USER</button>
+        </div>
+       
+    </div>
+    <div *ngIf="task" class="modal-body">
+        <form [formGroup]="taskForm">
+            <input type="text" formControlName="task" placeholder="Enter task name"> 
+            <div *ngIf="submitted && taskForm['controls'].task.hasError('required')">
+                Please enter task name
+            </div>
+            
+        </form>
+        <div class="add">
+            <button type="button" (click)="addTask()">ADD TASK</button>
+        </div>
+       
+    </div>
+    <div *ngIf="delete" class="modal-body">
+         
+        <div class="add">
+            <button type="button" (click)="deleteUser()">DELETE USER</button>
+        </div>
+       
+    </div>
+    </div>
+    </div>
+  </div>
+  </ng-template>

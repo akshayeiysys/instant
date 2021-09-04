@@ -1,0 +1,114 @@
+.card{
+    border: 1px solid;
+}
+
+.btn{
+    float: right;
+    
+}
+.btn button{
+    cursor: pointer;
+    outline: none
+}
+.user{
+    text-align: center;
+}
+
+.card button{
+    float: right;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    outline: none
+}
+.close{
+    outline: none;
+}
+
+.head{
+    border-bottom: 1px solid;
+}
+.modal-wrapper {
+    width: 100%;
+    height: 100%;
+   
+    display: flex;
+    
+    justify-content: center;
+    
+    align-items: center;
+}
+
+.modal-header{
+    border-bottom: none !important;
+}
+.modal-content {
+    padding: 8px !important;
+}
+
+.modal-content {
+   
+    max-width: 100%;
+    background:transparent;
+    border-radius:0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.modal__header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-bottom: 16px;
+}
+.modal__title {
+    font-size: 18px;
+    color: black;
+}
+.modal__close {
+    cursor: pointer;
+}
+.modal__item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    
+    justify-content: space-between;
+    
+    align-items: center;
+    height: 61px;
+    border: 1px solid #535353;
+    border-radius: 10px;
+    padding: 0 18px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #fff;
+    margin-top: 16px;
+}
+
+.add{
+    padding: 25px;
+    text-align: center;
+}
+
+.modal-body input{
+    width: 100%;
+}
+
+.roundPlus{
+    border-radius: 50%;
+    border: 1px solid;
+}
+.round{
+    text-align: center;
+}
+.round a{
+    cursor: pointer;
+}
